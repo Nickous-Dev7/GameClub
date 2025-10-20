@@ -1,0 +1,28 @@
+
+@font-face {
+    font-family: 'FightThis'; /* Nome que você vai usar no CSS */
+    src: url('../fonts/FightThis.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+.title {
+    text-align: center;
+    font-family: FightThis;
+    color: rgb(163, 3, 3);
+    background-color: black;
+    
+    
+}
+header {
+  color: white;
+}
+body {
+  background-color: rgb(46, 45, 45);
+}
+.register {
+  color: white;
+}
+.btn {
+  font-family: FightThis;
+  color: rgb(163, 3, 3);
+}
