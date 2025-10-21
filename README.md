@@ -22,10 +22,6 @@ Ratings and trade history
 
 HTML, CSS, JavaScript
 
-Node.js and Express
-
-MongoDB
-
 Git and GitHub
 
 💡 Status
