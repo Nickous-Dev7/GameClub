@@ -1,17 +1,26 @@
 
-@font-face {
-    font-family: 'FightThis'; /* Nome que você vai usar no CSS */
-    src: url('../fonts/FightThis.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-.title {
-    text-align: center;
-    font-family: FightThis;
-    color: rgb(163, 3, 3);
-    background-color: black;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+header {
+  background-color: #111;
+  color: white;
+  padding: 10px 20px;
 }
-.body {
-    background-color: rgb(46, 45, 45);
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: "Rubik Wet Paint", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(94, 3, 3);
 }
+
+
+
