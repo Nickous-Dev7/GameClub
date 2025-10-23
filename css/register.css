@@ -79,3 +79,9 @@ table td {
   text-align: center;
 }
 
+.icon-btn {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  vertical-align: middle;
+}
