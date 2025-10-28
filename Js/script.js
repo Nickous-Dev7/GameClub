@@ -134,7 +134,7 @@ class Produto {
             td_valor.innerText = this.arrayProdutos[i].valor;
 
             let imgEdit = document.createElement("img");
-            imgEdit.src = "edit.svg";
+            imgEdit.src = "Images/edit.svg";
             imgEdit.style.width = "24px";
             imgEdit.style.height = "24px";
             imgEdit.style.cursor = "pointer";
@@ -142,7 +142,7 @@ class Produto {
             imgEdit.setAttribute("onclick", "produto.editar(" + this.arrayProdutos[i].id + ")");
 
             let imgDelete = document.createElement("img");
-            imgDelete.src = "delete.svg";
+            imgDelete.src = "Images/delete.svg";
             imgDelete.style.width = "24px";
             imgDelete.style.height = "24px";
             imgDelete.style.cursor = "pointer";

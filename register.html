@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Club</title>
     <link rel="stylesheet" href="css/Register.css">
-    <link rel="icon" type="image/x-icon" href="game_club_cartridge_icon.ico">
+    <link rel="icon" type="image/x-icon" href="Images/game_club_cartridge_icon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
@@ -22,18 +22,19 @@
             <div>
                 <h2>Cadastro de Itens</h2>
             </div>
-            
-            <div class="card">
-                <div class="lineInput">
-                    <label for="nomeProduto">Nome do Jogo</label>
-                    <input type="text" id="nomeProduto" placeholder="Insira o Nome">
-                </div>
-                <div class="lineInput">
-                    <label for="console">Console</label>
-                    <input type="text" id="console" placeholder="Insira o Console">
-                </div>
-                <div class="lineInput">
-                    <label for="estado">Estado</label>
+            <div class="content-form">
+
+                <div class="card">
+                    <div class="lineInput">
+                        <label for="nomeProduto">Nome do Jogo</label>
+                        <input type="text" id="nomeProduto" placeholder="Insira o Nome">
+                    </div>
+                    <div class="lineInput">
+                        <label for="console">Console</label>
+                        <input type="text" id="console" placeholder="Insira o Console">
+                    </div>
+                    <div class="lineInput">
+                        <label for="estado">Estado</label>
                     <input type="text" id="estado" placeholder="Insira o Estado">
                 </div>
                 <div class="lineInput">
@@ -47,7 +48,7 @@
                 <button onclick="produto.adicionar()">Registrar</button>
                 <button onclick="produto.cancelar()">Cancelar</button>
             </div>
-
+            
             <div class="content">
                 <table>
                     <thead>
@@ -66,8 +67,31 @@
                     </tbody>
                 </table>
             </div>
+            </div>
         </div>
     </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+          <div class="footer-col">
+            <h4>Linkedin</h4>
+            <p><a href="https://www.linkedin.com/in/nicolas-tavares-b73935245" target="_blank"><img src="Images/linkedin.svg" alt=""></a></p>
+          </div>
+          <div class="footer-col">
+            <h4>GitHub</h4>
+            <p><a href="https://github.com/Nickous-Dev7" target="_blank"><img src="Images/github.svg" alt=""></a></p>
+            
+          </div>
+          <div class="footer-col">
+            <h4>Contato</h4>
+            <p></p>
+            <p><a href="mailto:nicolas-developer@outlook.com" target="_blank"><img src="Images/outlook.svg" alt=""></a></p>
+          </div>
+        </div>
+        <p class="copy">&copy; 2025 GameClub - Todos os direitos reservados.</p>
+        <div class="footer-social">
+        </div>
+      </footer>
 
     
     <script src="Js/script.js"></script>
