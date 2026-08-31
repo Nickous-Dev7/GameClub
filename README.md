@@ -1,30 +1,29 @@
-# GameClub
+🕹️ GameClub
 
-Projeto de e-commerce de games retrô em HTML, CSS e JavaScript.
+GameClub is a platform designed to create a network for trading used games, connecting players who want to buy, sell, or exchange their games easily and safely.
 
-## Funcionalidades
-- Busca por título na marketplace
-- Filtros por categoria e plataforma
-- Cadastro de produtos com upload de imagem
-- Máscara de CPF, telefone e CEP
-- Consulta de CEP via ViaCEP
+🎯 Goal
 
-## Como executar
-1. Abra a pasta do projeto.
-2. Inicie o arquivo `index.html` no navegador.
-3. Se preferir, use um servidor local simples, como:
-   ```bash
-   python -m http.server 8000
-   ```
-4. Acesse `http://localhost:8000`.
+To make used games more accessible and build a collaborative gaming community where each user can give their old games a new life.
 
-## Estrutura principal
-- `index.html` — página inicial
-- `marketplace.html` — loja
-- `cart.html` — carrinho
-- `checkout.html` — checkout
-- `profile.html` — perfil
-- `auth.js`, `market.js`, `cart.js`, `utils.js` — lógica do sistema
+🚀 Features (in development)
 
-## Observação
-Este projeto foi desenvolvido como uma aplicação front-end estática e pode ser publicado diretamente no GitHub Pages ou em qualquer hospedagem estática.
+User registration and gamer profiles
+
+Posting ads for used games
+
+Search and filter system by platform, genre, and price
+
+Chat between buyers and sellers
+
+Ratings and trade history
+
+🧠 Technologies used (example)
+
+HTML, CSS, JavaScript
+
+Git and GitHub
+
+💡 Status
+
+Currently in development — contributions and suggestions are welcome!
