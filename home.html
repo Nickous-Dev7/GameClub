@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>GameClub - Início</title>
+<link rel="stylesheet" href="home.css">
+<link rel="icon" href="game_club_cartridge_icon.ico">
+<link rel="stylesheet" href="home.css">
+<script src="utils.js" defer></script>
+</head>
+
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header card">
+        <div class="brand">
+           <div class="brand"><div class="logo"><img src="logo.png" alt="Logo GameClub" class="logo-img"></div><div><div>GAMECLUB</div><div class="small muted">Mercado de usados</div></div></div>
+        </div>
+
+        <div class="header-right nav">
+            <a class="badge" href="#" onclick="goToMarket()" target="_blank">Marketplace</a>
+            <a class="badge" href="index.html" target="_blank">Entrar</a>
+            <a class="badge" href="register.html" target="_blank">Cadastre-se</a>
+            <button id="themeToggle" class="toggle">☀️/🌙</button>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero card">
+        <div class="hero-text">
+            <h1>ENCONTRE SEU <br> GAME RETRÔ <br> FAVORITO</h1>
+            <a href="marketplace.html" class="btn-hero" target="_blank">EXPLORAR MARKETPLACE</a>
+        </div>
+
+        <img src="retro.png" class="hero-img">
+    </section>
+
+    <!-- DESTAQUES -->
+    <h2 class="section-title">DESTAQUES</h2>
+    <div class="grid-cards">
+        <div class="card product-card">
+            <img src="xbox.png">
+            <strong>Xbox Series X</strong>
+            <span class="price">R$ 4.000</span>
+        </div>
+
+        <div class="card product-card">
+            <img src="mega.png">
+            <strong>Mega Drive 3 TS</strong>
+            <span class="price">R$ 200</span>
+        </div>
+
+        <div class="card product-card">
+            <img src="astra.png">
+            <strong>Amstrad GX4000</strong>
+            <span class="price">R$ 700</span>
+        </div>
+
+        <div class="card product-card">
+            <img src="Nintendo-DS-Lite-Black-Open.png">
+            <strong>Nintendo DS Lite</strong>
+            <span class="price">R$ 500</span>
+        </div>
+    </div>
+
+    <!-- NOVIDADES -->
+    <h2 class="section-title">NOVIDADES</h2>
+    <div class="grid-cards">
+        <div class="card product-card">
+            <img src="nintendo.png">
+            <strong>Super Nintendo</strong>
+            <span class="price">R$ 120</span>
+        </div>
+
+        <div class="card product-card">
+            <img src="nintendo2.png">
+            <strong>Super Nintendo</strong>
+            <span class="price">R$ 120</span>
+        </div>
+
+        <div class="card product-card">
+            <img src="spf.png">
+            <strong>Super Famicom</strong>
+            <span class="price">R$ 900</span>
+        </div>
+
+        <div class="card product-card">
+            <img src="zelda.png">
+            <strong>Zelda Ocarina of Time</strong>
+            <span class="price">R$ 550</span>
+        </div>
+    </div>
+
+    <!-- MAIS VISUALIZADOS -->
+    <h2 class="section-title">MAIS VISUALIZADOS</h2>
+    <div class="grid-cards">
+        <div class="card product-card">
+            <img src="ps2.png">
+            <strong>PlayStation 2</strong>
+            <span class="price">R$ 300</span>
+        </div>
+
+        <div class="card product-card">
+            <img src="ggear.png">
+            <strong>Game Gear</strong>
+            <span class="price">R$ 500</span>
+        </div>
+
+        <div class="card product-card">
+            <img src="gamecube.png">
+            <strong>GameCube</strong>
+            <span class="price">R$ 800</span>
+        </div>
+
+        <div class="card product-card">
+            <img src="dream.png">
+            <strong>Dreamcast</strong>
+            <span class="price">R$ 650</span>
+        </div>
+    </div>
+
+</div>
+
+<script>
+(function(){
+  const t=localStorage.getItem('theme')||'dark';
+  if(t==='light') document.documentElement.setAttribute('data-theme','light');
+
+  document.getElementById('themeToggle').addEventListener('click', ()=>{
+    const cur=document.documentElement.getAttribute('data-theme');
+    const next=cur==='light'?'':'light';
+    if(next) document.documentElement.setAttribute('data-theme','light');
+    else document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('theme', next?'light':'dark');
+  });
+})();
+</script>
+<script>
+function goToMarket() {
+    const session = JSON.parse(localStorage.getItem("session"));
+    if (!session) {
+        alert("Faça login antes de acessar o marketplace!");
+        location.href = "index.html";
+    } else {
+        location.href = "marketplace.html";
+    }
+}
+</script>
+
+
+</body>
+</html>

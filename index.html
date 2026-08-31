@@ -1,46 +1,43 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="Images/game_club_cartridge_icon.ico">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
-    <title>GameClub</title>
+<meta charset="utf-8"><title>GameClub - Login</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="game_club_cartridge_icon.ico">
+<script src="utils.js" defer></script>
+<script src="auth.js" defer></script>
 </head>
 <body>
-    <header class="title">
-        <h1>GameClub</h1>
-    </header>
-    <div class="first">
-        <h2>Faça o Registro de Seus Itens</h2>
-    </div> 
-    
-    <div class="btn">
-        <a href="register.html">Registrar</a>
+  <div class="container">
+    <div class="header card">
+      <div class="brand"><div class="logo"><img src="logo.png" alt="Logo GameClub" class="logo-img"></div><div><div>GAMECLUB</div><div class="small muted">Mercado de usados</div></div></div>
+      <div class="header-right"><a href="register.html" class="badge">Criar conta</a></div>
+      <button id="themeToggle" class="toggle">☀️/🌙</button>
     </div>
 
-    <footer class="site-footer">
-        <div class="footer-container">
-          <div class="footer-col">
-            <h4>Linkedin</h4>
-            <p><a href="https://www.linkedin.com/in/nicolas-tavares-b73935245" target="_blank"><img src="Images/linkedin.svg" alt=""></a></p>
-          </div>
-          <div class="footer-col">
-            <h4>GitHub</h4>
-            <p><a href="https://github.com/Nickous-Dev7" target="_blank"><img src="Images/github.svg" alt=""></a></p>
-            
-          </div>
-          <div class="footer-col">
-            <h4>Contato</h4>
-            <p></p>
-            <p><a href="mailto:nicolas-developer@outlook.com" target="_blank"><img src="Images/outlook.svg" alt=""></a></p>
-          </div>
-        </div>
-        <p class="copy">&copy; 2025 GameClub - Todos os direitos reservados.</p>
-        
-      </footer>
+    <div class="card" style="margin-top:16px;">
+      <h2>Entrar</h2>
+      <form id="loginForm">
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <input type="password" id="loginPass" placeholder="Senha" required>
+        <br>
+        <br>
+        <button type="submit">Entrar</button>
+      </form>
+      <div class="footer"></div>
+    </div>
+  </div>
+  <script>
+(function(){
+  const t = localStorage.getItem('theme') || 'dark';
+  if(t==='light') document.documentElement.setAttribute('data-theme','light');
+  document.getElementById('themeToggle').addEventListener('click', ()=>{
+    const cur = document.documentElement.getAttribute('data-theme');
+    const next = cur==='light' ? '' : 'light';
+    if(next) document.documentElement.setAttribute('data-theme','light'); else document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('theme', next?'light':'dark');
+  });
+})();
+</script>
 </body>
 </html>

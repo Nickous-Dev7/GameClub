@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><title>GameClub - Checkout</title>
+<link rel="stylesheet" href="styles.css">
+<script src="utils.js" defer></script>
+<script src="cart.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header card">
+      <div class="brand"><div class="logo"><img src="logo.png" alt="Logo GameClub" class="logo-img"></div><div><div>GAMECLUB</div><div class="small muted">Mercado de usados</div></div></div>
+      <div class="header-right nav">
+        <a class="badge" href="marketplace.html">Marketplace</a>
+        <a class="badge" href="cart.html">Carrinho</a>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h2>Checkout</h2>
+      <form id="checkoutForm">
+        <label class="small muted">Endereço para entrega</label>
+        <input id="checkoutAddress" required>
+        <label class="small muted">Forma de pagamento</label>
+        <select id="checkoutPayment">
+          <option>Pix</option>
+          <option>Cartão</option>
+          <option>Boleto</option>
+        </select>
+        <button type="submit">Pagar</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

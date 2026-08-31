@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><title>GameClub - Meus Produtos</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="game_club_cartridge_icon.ico">
+<script src="utils.js" defer></script>
+<script src="market.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header card">
+      <div class="brand">
+        <div class="logo"><img src="logo.png" alt="Logo GameClub" class="logo-img"></div>
+        <div>
+          <div>GAMECLUB</div>
+          <div class="small muted">Gerenciar produtos</div>
+      </div>
+    </div>
+      <div class="header-right nav">
+        <a class="badge" href="marketplace.html">Marketplace</a>
+        <a class="badge" href="profile.html">Perfil</a>
+        <button class="icon-btn" onclick="logout()">Sair</button>
+        <button id="themeToggle" class="toggle">☀️/🌙</button>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h2>Meus Produtos</h2>
+      <form id="productForm">
+        <input id="prodTitle" placeholder="Título" required>
+        <input id="prodPrice" placeholder="Preço (somente números)" required>
+        <select id="prodCategory" required>
+          <option value="" disabled selected hidden>Categoria</option>
+          <option>Jogo</option>
+          <option>Console</option>
+          <option>Acessório</option>
+        </select>
+        <select id="prodPlatform" required>
+          <option value="" disabled selected hidden>Plataforma</option>
+          <option>Atari 2600</option>
+          <option>Atari Jaguar</option>
+          <option>Dreamcast</option>
+          <option>GameCube</option>
+          <option>Mega Drive</option>
+          <option>Master System</option>
+          <option>Nintendo 2DS</option>
+          <option>Nintendo 3DS</option>
+          <option>Nintendo 64</option>
+          <option>Nintendo DS</option>
+          <option>Nintendo Entertainment System (NES)</option>
+          <option>Nintendo Switch</option>
+          <option>Nintendo Switch Lite</option>
+          <option>Nintendo Switch OLED</option>
+          <option>Nintendo Wii</option>
+          <option>Nintendo Wii U</option>
+          <option>PC</option>
+          <option>PlayStation 1</option>
+          <option>PlayStation 2</option>
+          <option>PlayStation 3</option>
+          <option>PlayStation 4</option>
+          <option>PlayStation 5</option>
+          <option>PS Vita</option>
+          <option>PSP</option>
+          <option>Super Nintendo (SNES)</option>
+          <option>Sega Saturn</option>
+          <option>Xbox</option>
+          <option>Xbox 360</option>
+          <option>Xbox One</option>
+          <option>Xbox Series S</option>
+          <option>Xbox Series X</option>
+        </select>
+        <input id="prodImage" placeholder="URL da imagem (opcional)">
+        <textarea id="prodDesc" placeholder="Descrição"></textarea>
+        <input type="hidden" id="editingId">
+        <button type="submit">Salvar Produto</button>
+      </form>
+      <h3 style="margin-top:12px;">Seus produtos</h3>
+      <div id="myProductsList"></div>
+    </div>
+  </div>
+  <script>(function(){ const t=localStorage.getItem('theme')||'dark'; if(t==='light') document.documentElement.setAttribute('data-theme','light'); document.getElementById('themeToggle').addEventListener('click', ()=>{ const cur=document.documentElement.getAttribute('data-theme'); const next=cur==='light'?'':'light'; if(next) document.documentElement.setAttribute('data-theme','light'); else document.documentElement.removeAttribute('data-theme'); localStorage.setItem('theme', next?'light':'dark'); }); })();</script>
+</body>
+</html>

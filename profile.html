@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>GameClub - Perfil</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="game_club_cartridge_icon.ico">
+  <script src="utils.js" defer></script>
+  <script src="auth.js" defer></script>
+  <script src="cart.js" defer></script>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header card">
+    <div class="brand">
+      <div class="logo"><img src="logo.png" alt="Logo GameClub" class="logo-img"></div>
+      <div>
+        <div>GAMECLUB</div>
+        <div class="small muted">Seu perfil</div>
+      </div>
+    </div>
+
+    <div class="header-right nav">
+      <a class="badge" href="marketplace.html">Marketplace</a>
+      <a class="badge" href="myproducts.html">Meus Produtos</a>
+
+      <!-- Botão de tema (correção) -->
+      
+      <a class="icon-btn" onclick="logout()">Sair</a>
+      <button id="themeToggle" class="toggle">☀️/🌙</button>
+    </div>
+  </div>
+
+  <!-- CARD -->
+  <div class="card" style="margin-top:16px;">
+    <h2>Meu Perfil</h2>
+    <div id="editBanner" class="editing-banner" style="display:none;">Editando informações...</div>
+    <form id="profileForm">
+      <div class="form-grid">
+
+        <div>
+          <label class="small muted">Nome</label>
+          <input id="profileName" required>
+
+          <label class="small muted">Email</label>
+          <input id="profileEmail" placeholder="Email" type="email" required>
+
+          <label class="small muted">Senha</label> 
+          <input id="profilePass" type="password" required>
+
+          <label class="small muted">Data de Nascimento</label>
+          <input id="profileBirth" type="date" required>
+
+        </div>
+
+        <div>
+          <label class="small muted">CPF</label>
+          <input id="profileCPF" required>
+
+          <label class="small muted">Celular</label>
+          <input id="profilePhone" required>
+
+          <label class="small muted">CEP</label>
+          <input id="profileCEP" required>
+
+          <label class="small muted">Endereço</label>
+          <input id="profileAddress" required>
+
+        </div>
+
+      </div>
+      <br>
+      <!-- BOTÕES -->
+      <button type="submit"  >Salvar</button>
+
+      <!-- Corrigido: não envia formulário -->
+      <button type="button" onclick="toggleEdit()">Editar</button>
+
+      <!-- Apagar Conta -->
+       <button type="button" class="delete-btn" onclick="deleteAccount()">Excluir Conta</button>
+
+
+    </form>
+
+    <h3 style="margin-top:12px;">Histórico de Compras</h3>
+    <div id="orderHistory"></div>
+  </div>
+</div>
+
+<script>
+
+// Toggle do tema
+(function(){
+  const t = localStorage.getItem('theme') || 'dark';
+  if(t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+
+  document.getElementById('themeToggle').addEventListener('click', ()=>{
+    const cur = document.documentElement.getAttribute('data-theme');
+    const next = cur === 'light' ? '' : 'light';
+    if(next) document.documentElement.setAttribute('data-theme','light');
+    else document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('theme', next ? 'light' : 'dark');
+  });
+})();
+
+
+// ================================
+//  FUNÇÃO REAL DE EDIÇÃO (corrigida)
+// ================================
+function toggleEdit(){
+  const inputs = document.querySelectorAll('#profileForm input');
+  const isEditing = inputs[0].disabled; // se está desabilitado => ativar edição
+
+  const banner = document.getElementById("editBanner");
+  const saveBtn = document.querySelector('button[type="submit"]');
+
+  inputs.forEach(i => {
+    i.disabled = !isEditing;
+
+    if(isEditing){
+      i.classList.add("editing-active");
+    } else {
+      i.classList.remove("editing-active");
+    }
+  });
+
+  // Mostrar aviso
+  banner.style.display = isEditing ? "inline-block" : "none";
+
+  // Destacar botão salvar
+  if(isEditing){
+    saveBtn.classList.add("editing-save-btn");
+  } else {
+    saveBtn.classList.remove("editing-save-btn");
+  }
+}
+
+</script>
+
+
+</body>
+</html>
